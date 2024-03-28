@@ -5,6 +5,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
 	"github.com/spf13/viper"
+	"go.uber.org/zap"
 )
 
 var db *sqlx.DB
@@ -24,5 +25,14 @@ func Init() (err error) {
 	}
 	db.SetMaxOpenConns(viper.GetInt("mysql.max_open_con"))
 	db.SetMaxIdleConns(viper.GetInt("mysql.max_idle_con"))
+
+	if err := createdPictureTable(db); err != nil {
+		zap.L().Error("createdPictureTable(db) failed", zap.Error(err))
+		return err
+	}
 	return
+}
+
+func createdPictureTable(db *sqlx.DB) (err error) {
+	return err
 }

@@ -12,7 +12,6 @@ import (
 func Init(mode string) (err error) {
 	// 创建编码器
 	encoder := getEncoder()
-
 	// 创建写入同步器
 	writeSyncer := getLogWriter(viper.GetString("log.filename"),
 		viper.GetInt("log.max_size"),
