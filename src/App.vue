@@ -8,22 +8,24 @@
 <script setup>
 import { onMounted,ref } from 'vue';
 import { ElLoading } from 'element-plus'
-const show = ref(false)
-onMounted(() => {
-    const loading = ElLoading.service({
-        lock: true,
-        text: '正在努力加载中 Loading...',
-        background: 'rgba(0, 0, 0, 0.7)',
-    })
-    setTimeout(async () => {
-        // while (satisfyData.value === null) {
-        //     console.log(satisfyData.value)
-        //     await new Promise(resolve => setTimeout(resolve, 100)); // 等待100毫秒
-        // }
-        loading.close()
-        show.value = true;
-    }, 1000)
-});
+const show = ref(true)
+
+// const show = ref(false)
+// onMounted(() => {
+//     const loading = ElLoading.service({
+//         lock: true,
+//         text: '正在努力加载中 Loading...',
+//         background: 'rgba(0, 0, 0, 0.7)',
+//     })
+//     setTimeout(async () => {
+//         // while (satisfyData.value === null) {
+//         //     console.log(satisfyData.value)
+//         //     await new Promise(resolve => setTimeout(resolve, 100)); // 等待100毫秒
+//         // }
+//         loading.close()
+//         show.value = true;
+//     }, 1000)
+// });
 </script>
 
 <style>

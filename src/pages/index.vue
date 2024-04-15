@@ -1,9 +1,8 @@
 <template>
-   <NaVHeader></NaVHeader>
+    index页面
 </template>
 
 <script setup>
-import NaVHeader from "~/components/NaVHeader.vue"
 </script>
 
 <style scoped>
