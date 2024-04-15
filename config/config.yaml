@@ -1,5 +1,5 @@
 app:
-  name: "upload"
+  name: "scaffold"
   mode: "dev"
   port: "80"
   start_time: "2024-03-27"
@@ -8,7 +8,7 @@ auth:
   jwt_expire: 168 #一周时间
 log:
   level: "info"
-  filename: "./upload.log"
+  filename: "./log/scaffold.log"
   max_size: 1
   max_age: 30
   max_backups: 7
@@ -23,5 +23,5 @@ mysql:
 redis:
   host: redis
   db: 0
-  password: ""
+  password: 520liuzihao
   poll_size: 100
