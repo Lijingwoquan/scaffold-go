@@ -6,7 +6,6 @@ import {
 import store from "./store"
 
 
-
 router.beforeEach(async (to, from, next) => {
     //显示loading
     showFullLoading()
