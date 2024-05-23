@@ -23,20 +23,21 @@ func main() {
 		return
 	}
 	defer func() {
+		//退出前写入全部日志
 		if err := zap.L().Sync(); err != nil {
 			fmt.Printf(" zap.L().Sync() failed,err:%v", err)
 		}
 	}()
 
-	//3.初始化mysql
-	if err := mysql.Init(); err != nil {
-		fmt.Printf("init mysql failed! err:%v", err)
-		return
-	}
-
 	//初始化雪花算法
 	if err := snowflake.Init(viper.GetString("app.start_time"), viper.GetInt64("app.machine_id")); err != nil {
 		fmt.Printf("snowflake init failed,err:%v", err)
+		return
+	}
+
+	//3.初始化mysql
+	if err := mysql.Init(); err != nil {
+		fmt.Printf("init mysql failed! err:%v", err)
 		return
 	}
 

@@ -31,10 +31,10 @@ func Init(mode string) (err error) {
 		consoleEncoder := zapcore.NewConsoleEncoder(zap.NewDevelopmentEncoderConfig())
 
 		core = zapcore.NewTee(
-			zapcore.NewCore(encoder, writeSyncer, l),
 			//往文件去写
-			zapcore.NewCore(consoleEncoder, zapcore.Lock(os.Stdout), zapcore.DebugLevel),
+			zapcore.NewCore(encoder, writeSyncer, l),
 			//往终端写
+			zapcore.NewCore(consoleEncoder, zapcore.Lock(os.Stdout), zapcore.DebugLevel),
 		)
 	} else {
 		core = zapcore.NewCore(encoder, writeSyncer, l)
