@@ -13,19 +13,15 @@ log:
   max_age: 30
   max_backups: 7
 mysql:
-  #  host: mysql
-  host: 127.0.0.1
+  host: mysql
   username: "root"
-    #  password: liuzihao520
-  password: ..Lzh20050807..
+  password: liuzihao520
   port: "3306"
   dbname: "scaffold"
   max_open_con: 200
   max_idle_con: 50
 redis:
-  #  host: redis
-  host: 127.0.0.1
+  host: redis
   db: 0
-    #  password: 520liuzihao
-  password: ""
+  password: 520liuzihao
   poll_size: 100

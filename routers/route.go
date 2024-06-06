@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"path/filepath"
+	"scaffold/controller"
 )
 
 var r *gin.Engine
@@ -24,6 +25,7 @@ func SetupRouter(mode string) *gin.Engine {
 	r.Use(cors.New(config))
 	//静态文件
 	r.Static("/img", "/app/statics/img")
+	r.POST("/uploadImg", controller.UploadImgHandler)
 
 	//下载功能
 	r.GET("/download/:format/:filename", func(c *gin.Context) {

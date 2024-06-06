@@ -26,7 +26,7 @@ COPY ./config /config
 COPY --from=builder /build/scaffold /
 
 # 声明服务端口
-EXPOSE 8080
+EXPOSE 8081
 
 # 需要运行的命令
 ENTRYPOINT [ "/scaffold","config/config.yaml"]
