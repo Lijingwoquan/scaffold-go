@@ -23,7 +23,7 @@ type MyClaims struct {
 func GenToken(u *models.User) (string, error) {
 	// 创建一个我们自己的声明的数据
 	c := MyClaims{
-		u.UserID,
+		u.Id,
 		jwt.StandardClaims{
 			ExpiresAt: time.Now().Add( //当下时间加上一周时间
 				time.Duration(viper.GetInt("auth.jwt_expire")) * time.Hour).Unix(), // 过期时间
@@ -32,7 +32,7 @@ func GenToken(u *models.User) (string, error) {
 	}
 	// 使用指定的签名方法创建签名对象 --> 得到一个结构体
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c)
-
+	var mySecret = []byte(viper.GetString("auth.secret"))
 	// 使用指定的secret签名并获得完整的编码后的字符串token
 	return token.SignedString(mySecret)
 }

@@ -23,11 +23,10 @@ RUN go build -o scaffold .
 ###################
 FROM debian:stretch-slim
 COPY ./config /config
-COPY --from=builder /build/scaffold /
+COPY --from=builder /build/QQBot /
 
 # 声明服务端口
 EXPOSE 8081
 
 # 需要运行的命令
-ENTRYPOINT [ "/scaffold","config/config.yaml"]
-
+ENTRYPOINT [ "/QQBot","config/config.yaml"]
