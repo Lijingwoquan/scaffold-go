@@ -11,14 +11,15 @@
 - 缓存层实现
 - 定时任务 (Ticker) 功能
 - JWT 认证
+-  Snowflake 雪花算法实现全局唯一ID
 - 项目重命名工具 (replace.exe)
 
 ## 快速开始
 
 1. 克隆项目:
 ````shell
-git clone https://github.com/Lijingwoquan/scaffold.git
-cd scaffold
+git clone https://github.com/Lijingwoquan/scaffold-go.git
+cd scaffold-go
 ````
 
 2. 重命名项目:
@@ -88,6 +89,11 @@ Redis 用于缓存和会话管理。Redis 连接信息同样在 `config/config.y
 ## JWT 认证
 
 项目使用 JWT 进行用户认证。JWT 密钥和工具函数可以在 `pkg/jwt/` 目录中找到。
+
+## Snowflake 算法
+
+项目集成了 Snowflake 雪花算法，用于生成分布式系统中的全局唯一 ID。详细内容在 `pkg/snowflake/`中`
+
 
 ## Docker 支持
 
