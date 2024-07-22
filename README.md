@@ -24,7 +24,7 @@ cd scaffold
 2. 重命名项目:
    使用提供的 `replace.exe` 工具来快速修改项目名称:
 ```shell
-replace.exe ./ your-new-project-name
+.\replace.exe .\ your-new-project-name
 ```
 这将把项目中的 "scaffold" 替换为 "your-new-project-name"。
 
